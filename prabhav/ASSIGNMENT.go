@@ -1,5 +1,10 @@
-// Assignment: Conditional Statements in Go (Golang)
-// Topics Covered: if, else if, else, nested if, short if, switch, fallthrough, switch without expression
+package main 
+
+import "fmt"
+
+func main(){
+//Imported these universally for all programs 
+
 
 // -----------------------------------------------------------
 // Section A: Easy (Fundamentals)
@@ -7,10 +12,17 @@
 
 // 1. Write a program to check if a number is positive, negative, or zero using if statements.
 
-// =========================================================
 
+	var a int
+	fmt.Scan(&a)
 
-
+	if a >0{
+		fmt.Println("Positive")
+	}else if a<0{
+		fmt.Println("Negative")
+	}else{
+		fmt.Println("Zero")
+	}
 
 // =========================================================
 
@@ -18,27 +30,43 @@
 
 // =========================================================
 
-
+	var b int 
+	fmt.Scan(&b)
+	if b>=18{
+		fmt.Println("Aap vote kr sakte hain")
+	}else{
+		fmt.Println("Aap vote nhi kr sakte h")
+	}
 
 
 // =========================================================
-
 
 // 3. Write a program that checks whether a given number is even or odd.
 
 // =========================================================
 
-
+	var c int
+	fmt.Scan(&c)
+	if c % 2 == 0{
+		fmt.Println("Even hai ye number")
+	}else{
+		fmt.Println("Odd hai ye number")
+	}
 
 
 // =========================================================
-
 
 // 4. Write a program that takes a student’s marks and prints “Pass” or “Fail” using an if-else condition.
 
 // =========================================================
 
-
+	var d int
+	fmt.Scan(&d)
+	if d >= 33{
+		fmt.Println("Bach gya launde")
+	}else{
+		fmt.Println("Tu tho fail hogya bhai")
+	}
 
 
 // =========================================================
@@ -47,7 +75,13 @@
 
 // =========================================================
 
-
+	var e int
+	fmt.Scan(&e)
+	if (e % 4 == 0 && e % 100 != 0) || (e % 400 == 0){
+		fmt.Println("Leap year hai ye")
+	}else{
+		fmt.Println("Leap year nhi hai ye")
+	}
 
 
 // =========================================================
@@ -65,7 +99,19 @@
 
 // =========================================================
 
-
+	var score int 
+	fmt.Scan(&score)
+	if score >= 90{
+		fmt.Println("Grade A")
+	}else if score >= 80{
+		fmt.Println("Grade B")
+	}else if score >= 70{
+		fmt.Println("Grade C")
+	}else if score >= 60{
+		fmt.Println( "Grade D")
+	}else{
+		fmt.Println("Grade F")
+	}
 
 
 // =========================================================
@@ -74,7 +120,17 @@
 
 // =========================================================
 
+	var m1 int 
+	var m2 int
 
+	fmt.Scan(&m1,&m2)
+	if m1 > m2{
+		fmt.Printf("%d is bada hai",m1)
+	}else if (m2>m1){
+		fmt.Printf("%d is bada hai",m2)
+	}else{
+		fmt.Println("Dono barabar hai")
+	}
 
 
 // =========================================================
@@ -83,7 +139,32 @@
 
 // =========================================================
 
-
+	var meow string
+	fmt.Scan(&meow)
+	switch meow{
+	case "a":
+		fmt.Println("Vowel hai")
+	case "e":
+		fmt.Println("Vowel hai")
+	case "i":
+		fmt.Println("Vowel hai")
+	case "o":
+		fmt.Println("Vowel hai")
+	case "u":
+		fmt.Println("Vowel hai")
+	case "A":
+		fmt.Println("Vowel hai")
+	case "E":
+		fmt.Println("Vowel hai")
+	case "I":
+		fmt.Println("Vowel hai")
+	case "O":
+		fmt.Println("Vowel hai")
+	case "U":
+		fmt.Println("Vowel hai")
+	default:
+		fmt.Println("Yo tho consonant hai")
+	}
 
 
 // =========================================================
@@ -92,7 +173,26 @@
 
 // =========================================================
 
-
+	var day string
+	fmt.Scan(&day)
+	switch day{
+		case "Monday":
+			fmt.Println("Weekday hai")
+		case "Tuesday":
+			fmt.Println("Weekday hai")
+		case "Wednesday":
+			fmt.Println("Weekday hai")
+		case "Thursday":
+			fmt.Println("Weekday hai")
+		case "Friday":
+			fmt.Println("Weekday hai")
+		case "Saturday":
+			fmt.Println("Weekend hai")
+		case "Sunday":
+			fmt.Println("Weekend hai")
+		default:
+			fmt.Println("Invalid day")
+		}
 
 
 // =========================================================
@@ -102,7 +202,13 @@
 // =========================================================
 
 
-
+	var n int
+	fmt.Scan(&n)
+	if n % 3 == 0 && n % 5 == 0{
+		fmt.Println("Dono se divisible hai")
+	}else{
+		fmt.Println("Dono se divisible nhi h")
+	}
 
 // =========================================================
 
@@ -137,7 +243,24 @@
 // =========================================================
 
 
+	var userkanaam string
+	var accountkichabi string
 
+	const username string = "prabhav"
+	const password string = "MeowisOP123#"
+
+	fmt.Println("Apne account ka nam enter kre")
+	fmt.Scan(&userkanaam)
+	fmt.Println("Apne account ka password enter kre")
+	fmt.Scan(&accountkichabi)
+
+	if userkanaam == username && accountkichabi == password{
+		fmt.Println("Login successful , Aapka swagat hai")
+	}else if userkanaam == username && accountkichabi != password{
+		fmt.Println("Invalid password , krapya chabi badle")
+	}else{
+		fmt.Println("User not found , bhag ja")
+	}
 
 // =========================================================
 
@@ -151,7 +274,24 @@
 
 // =========================================================
 
-
+	var side1 int
+	var side2 int
+	var side3 int
+	fmt.Println("triangle ke 3 sides ke lengths enter kre")
+	fmt.Scan(&side1,&side2,&side3)
+	if side1 == side2{
+		if side2 == side3{
+			fmt.Println("ye tho equilateral triangle hai")
+		}else{
+			fmt.Println("ye tho isosceles triangle hai")
+		}
+	}else if side2 == side3{
+		fmt.Println("ye tho isosceles triangle hai")
+	}else if side1 == side3{
+		fmt.Println(" ye tho isosceles triangle hai")
+	}else{
+		fmt.Println("scalene triangle hai ye tho")
+	}
 
 
 // =========================================================
@@ -168,7 +308,22 @@
 // =========================================================
 
 
-
+	var game int
+	fmt.Println("Kya krna h batao:")
+	fmt.Println("1 → Start Game")
+	fmt.Println("2 → Load Game")
+	fmt.Println("3 → Exit")
+	fmt.Scan(&game)
+	switch game{
+	case 1:
+		fmt.Println("Game start ho rha hai")
+	case 2:
+		fmt.Println("Game load ho rha hai")
+	case 3:
+		fmt.Println("Game band hora h")
+	default:
+		fmt.Println("bawla h ke , dobara try kr")
+	}
 
 // =========================================================
 
@@ -184,7 +339,21 @@
 
 // =========================================================
 
-
+	var temp int
+	fmt.Println("Abhi temperature kitna hai")
+	fmt.Scan(&temp)
+	switch {
+	case temp < 0:
+		fmt.Println("bht jada thand hai")
+	case temp <= 15:
+		fmt.Println("thand hai")
+	case temp <= 30:
+		fmt.Println("medium hai")
+	case temp > 30:
+		fmt.Println("garam hai")
+	default:
+		fmt.Println("Kripya thermometer lae")
+	}
 
 
 // =========================================================
@@ -200,7 +369,26 @@
 
 // =========================================================
 
-
+	var marks int
+	var Math bool
+	var Science bool
+	fmt.Println("percentage bta bhai")
+	fmt.Scan(&marks)
+	fmt.Println("maths mein pass h ya fail (true/false)")
+	fmt.Scan(&Math)
+	fmt.Println("science mein pass h ya fail (true/false)")
+	fmt.Scan(&Science)
+	if marks >= 60{
+		if Math == true && Science == true{
+			fmt.Println("admission mil jaega")
+		}else if Math == false && Science == true{
+			fmt.Println("Maths me fail ho , isliye admission nhi milega")
+		}else if Math == true && Science == false{
+			fmt.Println("Science me fail ho , isliye admission nhi milega")
+		}else{
+			fmt.Println("Sorry aap thode jada gawar ho , isliye admission nhi milega")
+		}
+	}
 
 
 // =========================================================
@@ -217,7 +405,24 @@
 
 // =========================================================
 
-
+	var num1 int
+	var num2 int
+	var num3 int
+	fmt.Println("3 number kripya krke enter kre")
+	fmt.Scan(&num1,&num2,&num3)
+	if num1 >= num2{
+		if num1 >= num3{
+			fmt.Printf("%d bada hai",num1)
+		}else{
+			fmt.Printf("%d bada hai",num3)
+		}
+	}else{
+		if num2 >= num3{
+			fmt.Printf("%d bada hai",num2)
+		}else{
+			fmt.Printf("%d bada hai",num3)
+		}
+	}
 
 
 // =========================================================
@@ -230,7 +435,32 @@
 
 // =========================================================
 
-
+	var num11 int
+	var num21 int
+	var operator string
+	fmt.Println("Calculator me apka swagat hai")
+	fmt.Println("Pehla number daale")
+	fmt.Scan(&num11)
+	fmt.Println("Dusra number daale")
+	fmt.Scan(&num21)
+	fmt.Println("Operator daale (+, -, *, /)")
+	fmt.Scan(&operator)
+	switch operator{
+	case "+":
+		fmt.Printf("Result: %d",num11+ num21)
+	case "-":
+		fmt.Printf("Result: %d",num11 - num21)
+	case "*":
+		fmt.Printf("Result: %d",num11 * num21)
+	case "/":
+		if num21 != 0{
+			fmt.Printf("Result: %d",num11 / num21)
+		}else{
+			fmt.Println("Zero se divide nhi kr skte")
+		}
+	default:
+		fmt.Println("Invalid operator")
+	}
 
 
 // =========================================================
@@ -243,7 +473,16 @@
 
 // =========================================================
 
-
+	var year int
+	fmt.Println("Year enter kro")
+	fmt.Scan(&year)
+	if year % 400 == 0{
+		fmt.Println("Century leap year hai ye")
+	}else if year % 4 == 0 && year % 100 != 0{
+		fmt.Println("Normal leap year hai ye")
+	}else{
+		fmt.Println("Leap year nhi hai ye")
+	}
 
 
 // =========================================================
@@ -254,7 +493,27 @@
 
 // =========================================================
 
-
+	var meow1 int
+	fmt.Println("Ek number enter kro (1-5)")
+	fmt.Scan(&meow1)
+	switch meow1{
+	case 1:
+		fmt.Println("Case 1 m apka swagat hai")
+		fallthrough
+	case 2:
+		fmt.Println("Case 2 m apka swagat hai")
+		fallthrough
+	case 3:
+		fmt.Println("Case 3 m apka swagat hai")
+		fallthrough
+	case 4:
+		fmt.Println("Case 4 m apka swagat hai")
+		fallthrough
+	case 5:
+		fmt.Println("Case 5 m apka swagat hai")
+	default:
+		fmt.Println("Invalid case number")
+	}
 
 
 // =========================================================
@@ -272,7 +531,26 @@
 
 // =========================================================
 
-
-
-
-// =========================================================
+	var marks1 int
+	var attendance int
+	var backlog bool
+	fmt.Println("percentage daalo")
+	fmt.Scan(&marks1)
+	fmt.Println("Attendance daalo")
+	fmt.Scan(&attendance)
+	fmt.Println("backlog lagi hai kya (true/false)")
+	fmt.Scan(&backlog)
+	if marks1 >= 85{
+		if attendance > 90{
+			if backlog == false{
+				fmt.Println("Scholarship mil jaegi aapko")
+			}else{
+				fmt.Println("Scholarship Denied , back clear kro apni")
+			}
+		}else{
+			fmt.Println("Scholarship Denied ,class attend nhi krte ho")
+		}
+	}else{
+		fmt.Println("Scholarship Denied, marks kam hai")
+	}
+}
